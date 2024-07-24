@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from .models import Musician, Album
 
 # Create your views here.
 def index(request):
-    diction = {'text_1': 'Silly text'}
+    musician_list = Musician.objects.order_by('first_name')
+
+    diction = {'text_1': 'This is a list of musicians from our database', 'musician': musician_list}
     return render(request, 'first_app/index.html', context=diction)

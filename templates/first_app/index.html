@@ -6,13 +6,27 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
-        <title>Homepage of First App</title>
+        <title>Musician List</title>
     </head>
 
     <body>
-        <h1>Homepage of First App</h1>
+        <h1>Musician List</h1>
         <h2> {{text_1}} </h2>
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Instrument</th>
+            </tr>
+            
+            {% for row in musician %}
+            <tr>
+                <td>{{ row.first_name }}</td>
+                <td>{{ row.last_name }}</td>
+                <td>{{ row.instrument }}</td>
+            </tr>
+            {% endfor %}
+        </table>
 
-        <img src="{% static 'images/image1.jpg' %}">
     </body>
 </html>
