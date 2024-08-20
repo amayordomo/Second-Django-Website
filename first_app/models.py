@@ -27,3 +27,5 @@ class Album(models.Model):
 
     def __str__(self):
         return self.name + " by " + str(self.artist) + "(" + str(self.release_date) + ")"
+
+
