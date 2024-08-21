@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 {% extends 'first_app/base.html' %}
+
+{% load my_filters %}
+
 {% block body_block %}
 
-<h1>I am from Index</h1>
+<h1> {{ sample_text|custom_filter }} </h1>
 
 {% endblock  %}
